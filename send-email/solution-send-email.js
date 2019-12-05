@@ -1,0 +1,25 @@
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: '',
+  auth: {
+    user: '',
+    pass: ''
+  }
+});
+
+var mailOptions = {
+  from: '',
+  to: '',
+  subject: '',
+  text: ``
+  // html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>'        
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
